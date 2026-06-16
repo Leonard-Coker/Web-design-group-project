@@ -1,512 +1,558 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SL FloodWatch – Sierra Leone Flood Monitoring</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<!-- Animated rain background -->
-<div class="bg-rain" id="rain"></div>
+  <!-- Animated rain background -->
+  <div class="bg-rain" id="rain"></div>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">
-    <div class="dot"></div>
-    SL FloodWatch
-  </div>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#monitoring">Live Status</a></li>
-    <li><a href="#alerts">Alerts</a></li>
-    <li><a href="#report">Report</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#about">About</a></li>
-  </ul>
-  <a href="#report" class="nav-cta">Report Flood</a>
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+      <div class="dot"></div>
+      SL FloodWatch
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#monitoring">Live Status</a></li>
+      <li><a href="#alerts">Alerts</a></li>
+      <li><a href="#report">Report</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a href="#report" class="nav-cta">Report Flood</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-<!-- HERO -->
-<section id="home">
-  <div class="hero-badge">
-    <span>🌊</span> Real-time Flood Monitoring — Sierra Leone
-  </div>
-  <h1 class="hero-title">
-    Protect Lives.<br/><span>Beat the Flood.</span>
-  </h1>
-  <p class="hero-sub">
-    SL FloodWatch provides real-time flood alerts, water-level data, and community
-    reporting tools to keep Sierra Leoneans safe during heavy rainfall seasons.
-  </p>
-  <div class="hero-buttons">
-    <a href="#monitoring" class="btn-primary">View Live Status</a>
-    <a href="#report" class="btn-outline">Report Flooding</a>
-  </div>
-</section>
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-badge">
+      <span>🌊</span> Real-time Flood Monitoring — Sierra Leone
+    </div>
+    <h1 class="hero-title">
+      Protect Lives.<br /><span>Beat the Flood.</span>
+    </h1>
+    <p class="hero-sub">
+      SL FloodWatch provides real-time flood alerts, water-level data, and community
+      reporting tools to keep Sierra Leoneans safe during heavy rainfall seasons.
+    </p>
+    <div class="hero-buttons">
+      <a href="#monitoring" class="btn-primary">View Live Status</a>
+      <a href="#report" class="btn-outline">Report Flooding</a>
+    </div>
+  </section>
 
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stat-item">
-    <div class="stat-num" id="activeAlerts">3</div>
-    <div class="stat-label">Active Alerts</div>
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num" id="activeAlerts">3</div>
+      <div class="stat-label">Active Alerts</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">14</div>
+      <div class="stat-label">Monitored Zones</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2,400+</div>
+      <div class="stat-label">People Notified</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Monitoring Active</div>
+    </div>
   </div>
-  <div class="stat-item">
-    <div class="stat-num">14</div>
-    <div class="stat-label">Monitored Zones</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">2,400+</div>
-    <div class="stat-label">People Notified</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">24/7</div>
-    <div class="stat-label">Monitoring Active</div>
-  </div>
-</div>
 
-<!-- MONITORING SECTION -->
-<section id="monitoring">
-  <div style="text-align:center; max-width: 1100px; margin: 0 auto;">
-    <div class="section-label">Live Monitoring</div>
-    <h2 class="section-title" style="margin: 0 auto 0.5rem;">Water Level Status by Zone</h2>
+  <!-- MONITORING SECTION -->
+  <section id="monitoring">
+    <div style="text-align:center; max-width: 1100px; margin: 0 auto;">
+      <div class="section-label">Live Monitoring</div>
+      <h2 class="section-title" style="margin: 0 auto 0.5rem;">Water Level Status by Zone</h2>
+      <p class="section-text" style="margin: 0 auto; text-align:center;">
+        Current flood risk levels across key districts in Sierra Leone, updated every 15 minutes.
+      </p>
+    </div>
+    <div class="monitoring-grid">
+      <div class="alert-card danger">
+        <div class="card-header">
+          <div class="card-location">📍 Freetown — East End</div>
+          <span class="status-badge danger">🔴 Critical</span>
+        </div>
+        <div class="water-bar-wrap">
+          <div class="water-bar-label"><span>Water Level</span><span>87%</span></div>
+          <div class="water-bar-track">
+            <div class="water-bar-fill" style="width:87%"></div>
+          </div>
+        </div>
+        <div class="card-meta">Rainfall: 42mm/hr &nbsp;·&nbsp; River Rokel rising fast</div>
+      </div>
+      <div class="alert-card warning">
+        <div class="card-header">
+          <div class="card-location">📍 Bo District</div>
+          <span class="status-badge warning">🟡 Warning</span>
+        </div>
+        <div class="water-bar-wrap">
+          <div class="water-bar-label"><span>Water Level</span><span>61%</span></div>
+          <div class="water-bar-track">
+            <div class="water-bar-fill" style="width:61%"></div>
+          </div>
+        </div>
+        <div class="card-meta">Rainfall: 24mm/hr &nbsp;·&nbsp; Monitor stream levels</div>
+      </div>
+      <div class="alert-card safe">
+        <div class="card-header">
+          <div class="card-location">📍 Makeni, Bombali</div>
+          <span class="status-badge safe">🟢 Normal</span>
+        </div>
+        <div class="water-bar-wrap">
+          <div class="water-bar-label"><span>Water Level</span><span>28%</span></div>
+          <div class="water-bar-track">
+            <div class="water-bar-fill" style="width:28%"></div>
+          </div>
+        </div>
+        <div class="card-meta">Rainfall: 6mm/hr &nbsp;·&nbsp; Conditions stable</div>
+      </div>
+      <div class="alert-card warning">
+        <div class="card-header">
+          <div class="card-location">📍 Kenema District</div>
+          <span class="status-badge warning">🟡 Warning</span>
+        </div>
+        <div class="water-bar-wrap">
+          <div class="water-bar-label"><span>Water Level</span><span>55%</span></div>
+          <div class="water-bar-track">
+            <div class="water-bar-fill" style="width:55%"></div>
+          </div>
+        </div>
+        <div class="card-meta">Rainfall: 19mm/hr &nbsp;·&nbsp; Road flooding possible</div>
+      </div>
+      <div class="alert-card safe">
+        <div class="card-header">
+          <div class="card-location">📍 Kailahun District</div>
+          <span class="status-badge safe">🟢 Normal</span>
+        </div>
+        <div class="water-bar-wrap">
+          <div class="water-bar-label"><span>Water Level</span><span>22%</span></div>
+          <div class="water-bar-track">
+            <div class="water-bar-fill" style="width:22%"></div>
+          </div>
+        </div>
+        <div class="card-meta">Rainfall: 3mm/hr &nbsp;·&nbsp; All clear</div>
+      </div>
+      <div class="alert-card danger">
+        <div class="card-header">
+          <div class="card-location">📍 Port Loko</div>
+          <span class="status-badge danger">🔴 Critical</span>
+        </div>
+        <div class="water-bar-wrap">
+          <div class="water-bar-label"><span>Water Level</span><span>79%</span></div>
+          <div class="water-bar-track">
+            <div class="water-bar-fill" style="width:79%"></div>
+          </div>
+        </div>
+        <div class="card-meta">Rainfall: 36mm/hr &nbsp;·&nbsp; Evacuation advised</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP SECTION -->
+  <section id="map-section">
+    <div class="section-label">Geographic Overview</div>
+    <h2 class="section-title">Sierra Leone Flood Risk Map</h2>
+    <p class="section-text" style="margin: 0 auto;">Visual overview of risk zones across the country.</p>
+    <div class="map-container">
+      <svg class="map-svg" viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="gFreetown" cx="50%" cy="50%">
+            <stop offset="0%" stop-color="#ef4444" stop-opacity="0.5" />
+            <stop offset="100%" stop-color="#ef4444" stop-opacity="0" />
+          </radialGradient>
+          <radialGradient id="gBo" cx="50%" cy="50%">
+            <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.4" />
+            <stop offset="100%" stop-color="#f59e0b" stop-opacity="0" />
+          </radialGradient>
+          <radialGradient id="gPortLoko" cx="50%" cy="50%">
+            <stop offset="0%" stop-color="#ef4444" stop-opacity="0.4" />
+            <stop offset="100%" stop-color="#ef4444" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+        <!-- Map bg -->
+        <rect width="700" height="420" fill="#0e2a4d" rx="16" />
+        <!-- Grid lines -->
+        <g stroke="rgba(0,180,216,0.08)" stroke-width="1">
+          <line x1="0" y1="70" x2="700" y2="70" />
+          <line x1="0" y1="140" x2="700" y2="140" />
+          <line x1="0" y1="210" x2="700" y2="210" />
+          <line x1="0" y1="280" x2="700" y2="280" />
+          <line x1="0" y1="350" x2="700" y2="350" />
+          <line x1="116" y1="0" x2="116" y2="420" />
+          <line x1="233" y1="0" x2="233" y2="420" />
+          <line x1="350" y1="0" x2="350" y2="420" />
+          <line x1="466" y1="0" x2="466" y2="420" />
+          <line x1="583" y1="0" x2="583" y2="420" />
+        </g>
+        <!-- Sierra Leone rough outline -->
+        <path
+          d="M160,60 L280,45 L420,55 L520,90 L570,160 L580,240 L540,320 L480,380 L380,395 L260,380 L180,340 L130,270 L120,190 L140,110 Z"
+          fill="rgba(21,101,192,0.18)" stroke="rgba(0,180,216,0.4)" stroke-width="1.5" />
+        <!-- Rivers -->
+        <path d="M200,200 Q240,210 270,240 Q300,265 330,290 Q360,315 380,370" fill="none" stroke="rgba(0,180,216,0.45)"
+          stroke-width="2" />
+        <path d="M160,180 Q190,175 220,185 Q250,195 280,200" fill="none" stroke="rgba(0,180,216,0.35)"
+          stroke-width="1.5" />
+        <!-- Flood zones -->
+        <circle cx="190" cy="190" r="60" fill="url(#gFreetown)" />
+        <circle cx="310" cy="290" r="50" fill="url(#gBo)" />
+        <circle cx="220" cy="150" r="55" fill="url(#gPortLoko)" />
+        <!-- City dots -->
+        <circle cx="190" cy="190" r="7" fill="#ef4444">
+          <animate attributeName="r" values="7;10;7" dur="1.5s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;0.6;1" dur="1.5s" repeatCount="indefinite" />
+        </circle>
+        <text x="200" y="186" fill="#ef4444" font-size="11" font-family="DM Sans,sans-serif"
+          font-weight="600">Freetown</text>
+        <circle cx="310" cy="290" r="6" fill="#f59e0b">
+          <animate attributeName="r" values="6;9;6" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <text x="320" y="287" fill="#f59e0b" font-size="11" font-family="DM Sans,sans-serif">Bo</text>
+        <circle cx="220" cy="150" r="7" fill="#ef4444">
+          <animate attributeName="r" values="7;10;7" dur="1.8s" repeatCount="indefinite" />
+        </circle>
+        <text x="230" y="147" fill="#ef4444" font-size="11" font-family="DM Sans,sans-serif">Port Loko</text>
+        <circle cx="370" cy="165" r="5" fill="#22c55e" />
+        <text x="380" y="162" fill="#22c55e" font-size="11" font-family="DM Sans,sans-serif">Makeni</text>
+        <circle cx="420" cy="260" r="5" fill="#f59e0b" />
+        <text x="430" y="258" fill="#f59e0b" font-size="11" font-family="DM Sans,sans-serif">Kenema</text>
+        <circle cx="480" cy="295" r="5" fill="#22c55e" />
+        <text x="490" y="292" fill="#22c55e" font-size="11" font-family="DM Sans,sans-serif">Kailahun</text>
+        <!-- Title -->
+        <text x="20" y="400" fill="rgba(0,180,216,0.5)" font-size="10" font-family="DM Sans,sans-serif">SL FloodWatch •
+          Live Risk Zones</text>
+      </svg>
+      <div class="map-overlay">
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#ef4444"></div> Critical Zone
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#f59e0b"></div> Warning Zone
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#22c55e"></div> Safe Zone
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALERTS -->
+  <section id="alerts">
+    <div class="section-label">Latest Alerts</div>
+    <h2 class="section-title">Emergency Notifications</h2>
+    <p class="section-text">Stay informed with real-time emergency alerts issued by monitoring stations.</p>
+    <div class="alerts-container">
+      <div class="alert-item" style="border-color: rgba(239,68,68,0.3);">
+        <div class="alert-icon">🚨</div>
+        <div>
+          <div class="alert-title">CRITICAL — Freetown East End Evacuation Advisory</div>
+          <div class="alert-desc">Water levels on the Rokel River have reached 87% of critical threshold. Residents in
+            low-lying areas of East Freetown are advised to move to higher ground immediately. Emergency shelters open
+            at Hill Station School.</div>
+          <div class="alert-time">⏱ 12 minutes ago</div>
+        </div>
+      </div>
+      <div class="alert-item" style="border-color: rgba(239,68,68,0.3);">
+        <div class="alert-icon">⚠️</div>
+        <div>
+          <div class="alert-title">CRITICAL — Port Loko Flooding Ongoing</div>
+          <div class="alert-desc">Heavy rainfall of 36mm/hr reported in Port Loko district. Several roads are
+            impassable. National Disaster Management Agency deployed to the area.</div>
+          <div class="alert-time">⏱ 28 minutes ago</div>
+        </div>
+      </div>
+      <div class="alert-item" style="border-color: rgba(245,158,11,0.3);">
+        <div class="alert-icon">🌧️</div>
+        <div>
+          <div class="alert-title">WARNING — Bo District Rising Water Levels</div>
+          <div class="alert-desc">Rainfall trending upward in Bo. Water levels at 61%. Residents should avoid crossing
+            bridges and monitor updates. Situation being closely watched.</div>
+          <div class="alert-time">⏱ 45 minutes ago</div>
+        </div>
+      </div>
+      <div class="alert-item" style="border-color: rgba(245,158,11,0.3);">
+        <div class="alert-icon">🌊</div>
+        <div>
+          <div class="alert-title">WARNING — Kenema Road Flooding Possible</div>
+          <div class="alert-desc">Drainage systems under stress in Kenema. Motorists advised to use alternative routes
+            near Njaluahun junction.</div>
+          <div class="alert-time">⏱ 1 hour ago</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORT FORM -->
+  <section id="report">
+    <div style="text-align:center;">
+      <div class="section-label">Community Reporting</div>
+      <h2 class="section-title">Report a Flood Incident</h2>
+      <p class="section-text" style="margin: 0 auto;">
+        Help us keep Sierra Leoneans safe. Submit a flood report and our team will verify and broadcast the alert.
+      </p>
+    </div>
+    <div class="form-wrapper">
+      <div id="reportForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" placeholder="Aminata" />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" placeholder="Koroma" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="+232 XX XXX XXXX" />
+        </div>
+        <div class="form-group">
+          <label for="district">Affected District</label>
+          <select id="district">
+            <option value="">— Select district —</option>
+            <option>Western Area (Freetown)</option>
+            <option>Bo District</option>
+            <option>Bombali District (Makeni)</option>
+            <option>Kenema District</option>
+            <option>Kailahun District</option>
+            <option>Port Loko District</option>
+            <option>Pujehun District</option>
+            <option>Tonkolili District</option>
+            <option>Kambia District</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="severity">Severity Level</label>
+          <select id="severity">
+            <option value="">— Select severity —</option>
+            <option>🟢 Minor — shallow water on roads</option>
+            <option>🟡 Moderate — homes affected, passable</option>
+            <option>🔴 Severe — homes flooded, evacuation needed</option>
+            <option>⚫ Extreme — lives at immediate risk</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="description">Describe the situation</label>
+          <textarea id="description"
+            placeholder="Describe what you can see — water level, number of households affected, road conditions, injuries, etc."></textarea>
+        </div>
+        <button class="submit-btn" onclick="submitReport()">📡 Submit Flood Report</button>
+      </div>
+      <div class="form-success" id="formSuccess">
+        ✅ Report received! Our team has been notified and will verify your submission within 15 minutes. Stay safe.
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div style="text-align:center;">
+      <div class="section-label">Common Questions</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-text" style="margin: 0 auto;">
+        Find answers to common questions about SL FloodWatch and flood safety in Sierra Leone.
+      </p>
+    </div>
+    <div class="faq-container">
+      <details class="faq-item">
+        <summary>How often is the water level data updated?</summary>
+        <div class="faq-content">
+          Data is transmitted from our IoT sensors every 15 minutes to ensure real-time accuracy across all monitored
+          zones.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>How do I receive emergency alerts?</summary>
+        <div class="faq-content">
+          Currently, alerts are broadcast on this dashboard. We are actively working on an SMS notification system for
+          users in high-risk zones.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Who validates the community reports?</summary>
+        <div class="faq-content">
+          Our moderation team and local community leaders verify reports before they are broadcast as official alerts.
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div style="text-align:center;">
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-text" style="margin: 0 auto;">
+        Have questions or want to partner with us? Send us a message.
+      </p>
+    </div>
+    <div class="form-wrapper">
+      <div id="contactForm">
+        <div class="form-group">
+          <label for="contactName">Full Name</label>
+          <input type="text" id="contactName" placeholder="Your Name" />
+        </div>
+        <div class="form-group">
+          <label for="contactEmail">Email Address</label>
+          <input type="email" id="contactEmail" placeholder="your.email@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" placeholder="How can we help?"></textarea>
+        </div>
+        <button class="submit-btn" onclick="submitContact()">📩 Send Message</button>
+      </div>
+      <div class="form-success" id="contactSuccess">
+        ✅ Message sent! We'll get back to you shortly.
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-label">About SL FloodWatch</div>
+    <h2 class="section-title">Built for Sierra Leone</h2>
     <p class="section-text" style="margin: 0 auto; text-align:center;">
-      Current flood risk levels across key districts in Sierra Leone, updated every 15 minutes.
+      A Digital Public Good (DPG) initiative combining community reports, IoT sensor data,
+      and government partnerships to protect lives from flooding.
     </p>
-  </div>
-  <div class="monitoring-grid">
-    <div class="alert-card danger">
-      <div class="card-header">
-        <div class="card-location">📍 Freetown — East End</div>
-        <span class="status-badge danger">🔴 Critical</span>
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-icon">📡</div>
+        <h3>Real-time Sensors</h3>
+        <p>River level and rainfall sensors deployed across 14 districts feeding live data every 15 minutes.</p>
       </div>
-      <div class="water-bar-wrap">
-        <div class="water-bar-label"><span>Water Level</span><span>87%</span></div>
-        <div class="water-bar-track"><div class="water-bar-fill" style="width:87%"></div></div>
+      <div class="about-card">
+        <div class="about-icon">📲</div>
+        <h3>Community Reports</h3>
+        <p>Citizens submit on-the-ground reports via this website or SMS, verified and broadcast within minutes.</p>
       </div>
-      <div class="card-meta">Rainfall: 42mm/hr &nbsp;·&nbsp; River Rokel rising fast</div>
+      <div class="about-card">
+        <div class="about-icon">🏛️</div>
+        <h3>Government Partnership</h3>
+        <p>Integrated with Sierra Leone's National Disaster Management Agency (NDMA) for coordinated response.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-icon">🔓</div>
+        <h3>Open Source (DPG)</h3>
+        <p>Fully open-source under Digital Public Goods principles. Free to use, adapt, and improve by anyone.</p>
+      </div>
     </div>
-    <div class="alert-card warning">
-      <div class="card-header">
-        <div class="card-location">📍 Bo District</div>
-        <span class="status-badge warning">🟡 Warning</span>
-      </div>
-      <div class="water-bar-wrap">
-        <div class="water-bar-label"><span>Water Level</span><span>61%</span></div>
-        <div class="water-bar-track"><div class="water-bar-fill" style="width:61%"></div></div>
-      </div>
-      <div class="card-meta">Rainfall: 24mm/hr &nbsp;·&nbsp; Monitor stream levels</div>
-    </div>
-    <div class="alert-card safe">
-      <div class="card-header">
-        <div class="card-location">📍 Makeni, Bombali</div>
-        <span class="status-badge safe">🟢 Normal</span>
-      </div>
-      <div class="water-bar-wrap">
-        <div class="water-bar-label"><span>Water Level</span><span>28%</span></div>
-        <div class="water-bar-track"><div class="water-bar-fill" style="width:28%"></div></div>
-      </div>
-      <div class="card-meta">Rainfall: 6mm/hr &nbsp;·&nbsp; Conditions stable</div>
-    </div>
-    <div class="alert-card warning">
-      <div class="card-header">
-        <div class="card-location">📍 Kenema District</div>
-        <span class="status-badge warning">🟡 Warning</span>
-      </div>
-      <div class="water-bar-wrap">
-        <div class="water-bar-label"><span>Water Level</span><span>55%</span></div>
-        <div class="water-bar-track"><div class="water-bar-fill" style="width:55%"></div></div>
-      </div>
-      <div class="card-meta">Rainfall: 19mm/hr &nbsp;·&nbsp; Road flooding possible</div>
-    </div>
-    <div class="alert-card safe">
-      <div class="card-header">
-        <div class="card-location">📍 Kailahun District</div>
-        <span class="status-badge safe">🟢 Normal</span>
-      </div>
-      <div class="water-bar-wrap">
-        <div class="water-bar-label"><span>Water Level</span><span>22%</span></div>
-        <div class="water-bar-track"><div class="water-bar-fill" style="width:22%"></div></div>
-      </div>
-      <div class="card-meta">Rainfall: 3mm/hr &nbsp;·&nbsp; All clear</div>
-    </div>
-    <div class="alert-card danger">
-      <div class="card-header">
-        <div class="card-location">📍 Port Loko</div>
-        <span class="status-badge danger">🔴 Critical</span>
-      </div>
-      <div class="water-bar-wrap">
-        <div class="water-bar-label"><span>Water Level</span><span>79%</span></div>
-        <div class="water-bar-track"><div class="water-bar-fill" style="width:79%"></div></div>
-      </div>
-      <div class="card-meta">Rainfall: 36mm/hr &nbsp;·&nbsp; Evacuation advised</div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- MAP SECTION -->
-<section id="map-section">
-  <div class="section-label">Geographic Overview</div>
-  <h2 class="section-title">Sierra Leone Flood Risk Map</h2>
-  <p class="section-text" style="margin: 0 auto;">Visual overview of risk zones across the country.</p>
-  <div class="map-container">
-    <svg class="map-svg" viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="gFreetown" cx="50%" cy="50%"><stop offset="0%" stop-color="#ef4444" stop-opacity="0.5"/><stop offset="100%" stop-color="#ef4444" stop-opacity="0"/></radialGradient>
-        <radialGradient id="gBo" cx="50%" cy="50%"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.4"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></radialGradient>
-        <radialGradient id="gPortLoko" cx="50%" cy="50%"><stop offset="0%" stop-color="#ef4444" stop-opacity="0.4"/><stop offset="100%" stop-color="#ef4444" stop-opacity="0"/></radialGradient>
-      </defs>
-      <!-- Map bg -->
-      <rect width="700" height="420" fill="#0e2a4d" rx="16"/>
-      <!-- Grid lines -->
-      <g stroke="rgba(0,180,216,0.08)" stroke-width="1">
-        <line x1="0" y1="70" x2="700" y2="70"/>
-        <line x1="0" y1="140" x2="700" y2="140"/>
-        <line x1="0" y1="210" x2="700" y2="210"/>
-        <line x1="0" y1="280" x2="700" y2="280"/>
-        <line x1="0" y1="350" x2="700" y2="350"/>
-        <line x1="116" y1="0" x2="116" y2="420"/>
-        <line x1="233" y1="0" x2="233" y2="420"/>
-        <line x1="350" y1="0" x2="350" y2="420"/>
-        <line x1="466" y1="0" x2="466" y2="420"/>
-        <line x1="583" y1="0" x2="583" y2="420"/>
-      </g>
-      <!-- Sierra Leone rough outline -->
-      <path d="M160,60 L280,45 L420,55 L520,90 L570,160 L580,240 L540,320 L480,380 L380,395 L260,380 L180,340 L130,270 L120,190 L140,110 Z"
-            fill="rgba(21,101,192,0.18)" stroke="rgba(0,180,216,0.4)" stroke-width="1.5"/>
-      <!-- Rivers -->
-      <path d="M200,200 Q240,210 270,240 Q300,265 330,290 Q360,315 380,370" fill="none" stroke="rgba(0,180,216,0.45)" stroke-width="2"/>
-      <path d="M160,180 Q190,175 220,185 Q250,195 280,200" fill="none" stroke="rgba(0,180,216,0.35)" stroke-width="1.5"/>
-      <!-- Flood zones -->
-      <circle cx="190" cy="190" r="60" fill="url(#gFreetown)"/>
-      <circle cx="310" cy="290" r="50" fill="url(#gBo)"/>
-      <circle cx="220" cy="150" r="55" fill="url(#gPortLoko)"/>
-      <!-- City dots -->
-      <circle cx="190" cy="190" r="7" fill="#ef4444">
-        <animate attributeName="r" values="7;10;7" dur="1.5s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="1;0.6;1" dur="1.5s" repeatCount="indefinite"/>
-      </circle>
-      <text x="200" y="186" fill="#ef4444" font-size="11" font-family="DM Sans,sans-serif" font-weight="600">Freetown</text>
-      <circle cx="310" cy="290" r="6" fill="#f59e0b">
-        <animate attributeName="r" values="6;9;6" dur="2s" repeatCount="indefinite"/>
-      </circle>
-      <text x="320" y="287" fill="#f59e0b" font-size="11" font-family="DM Sans,sans-serif">Bo</text>
-      <circle cx="220" cy="150" r="7" fill="#ef4444">
-        <animate attributeName="r" values="7;10;7" dur="1.8s" repeatCount="indefinite"/>
-      </circle>
-      <text x="230" y="147" fill="#ef4444" font-size="11" font-family="DM Sans,sans-serif">Port Loko</text>
-      <circle cx="370" cy="165" r="5" fill="#22c55e"/>
-      <text x="380" y="162" fill="#22c55e" font-size="11" font-family="DM Sans,sans-serif">Makeni</text>
-      <circle cx="420" cy="260" r="5" fill="#f59e0b"/>
-      <text x="430" y="258" fill="#f59e0b" font-size="11" font-family="DM Sans,sans-serif">Kenema</text>
-      <circle cx="480" cy="295" r="5" fill="#22c55e"/>
-      <text x="490" y="292" fill="#22c55e" font-size="11" font-family="DM Sans,sans-serif">Kailahun</text>
-      <!-- Title -->
-      <text x="20" y="400" fill="rgba(0,180,216,0.5)" font-size="10" font-family="DM Sans,sans-serif">SL FloodWatch • Live Risk Zones</text>
-    </svg>
-    <div class="map-overlay">
-      <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div> Critical Zone</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div> Warning Zone</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div> Safe Zone</div>
-    </div>
-  </div>
-</section>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <strong>SL FloodWatch</strong> &nbsp;·&nbsp; A Digital Public Good for Sierra Leone &nbsp;·&nbsp; Built
+      with HTML, CSS & JavaScript</p>
+    <p style="margin-top:0.5rem;">Limkokwing University · DCOMP204 Web Design 1 · Semester 04</p>
+  </footer>
 
-<!-- ALERTS -->
-<section id="alerts">
-  <div class="section-label">Latest Alerts</div>
-  <h2 class="section-title">Emergency Notifications</h2>
-  <p class="section-text">Stay informed with real-time emergency alerts issued by monitoring stations.</p>
-  <div class="alerts-container">
-    <div class="alert-item" style="border-color: rgba(239,68,68,0.3);">
-      <div class="alert-icon">🚨</div>
-      <div>
-        <div class="alert-title">CRITICAL — Freetown East End Evacuation Advisory</div>
-        <div class="alert-desc">Water levels on the Rokel River have reached 87% of critical threshold. Residents in low-lying areas of East Freetown are advised to move to higher ground immediately. Emergency shelters open at Hill Station School.</div>
-        <div class="alert-time">⏱ 12 minutes ago</div>
-      </div>
-    </div>
-    <div class="alert-item" style="border-color: rgba(239,68,68,0.3);">
-      <div class="alert-icon">⚠️</div>
-      <div>
-        <div class="alert-title">CRITICAL — Port Loko Flooding Ongoing</div>
-        <div class="alert-desc">Heavy rainfall of 36mm/hr reported in Port Loko district. Several roads are impassable. National Disaster Management Agency deployed to the area.</div>
-        <div class="alert-time">⏱ 28 minutes ago</div>
-      </div>
-    </div>
-    <div class="alert-item" style="border-color: rgba(245,158,11,0.3);">
-      <div class="alert-icon">🌧️</div>
-      <div>
-        <div class="alert-title">WARNING — Bo District Rising Water Levels</div>
-        <div class="alert-desc">Rainfall trending upward in Bo. Water levels at 61%. Residents should avoid crossing bridges and monitor updates. Situation being closely watched.</div>
-        <div class="alert-time">⏱ 45 minutes ago</div>
-      </div>
-    </div>
-    <div class="alert-item" style="border-color: rgba(245,158,11,0.3);">
-      <div class="alert-icon">🌊</div>
-      <div>
-        <div class="alert-title">WARNING — Kenema Road Flooding Possible</div>
-        <div class="alert-desc">Drainage systems under stress in Kenema. Motorists advised to use alternative routes near Njaluahun junction.</div>
-        <div class="alert-time">⏱ 1 hour ago</div>
-      </div>
-    </div>
-  </div>
-</section>
+  <script>
+    /*// Rain animation
+    const rain = document.getElementById('rain');
+    for (let i = 0; i < 50; i++) {
+      const drop = document.createElement('div');
+      drop.className = 'raindrop';
+      const left = Math.random() * 100;
+      const dur = 0.6 + Math.random() * 1.2;
+      const delay = Math.random() * 3;
+      const h = 30 + Math.random() * 60;
+      drop.style.cssText = `left:${left}%;height:${h}px;animation-duration:${dur}s;animation-delay:${delay}s;opacity:${0.2 + Math.random()*0.4}`;
+      rain.appendChild(drop);
+    }*/
 
-<!-- REPORT FORM -->
-<section id="report">
-  <div style="text-align:center;">
-    <div class="section-label">Community Reporting</div>
-    <h2 class="section-title">Report a Flood Incident</h2>
-    <p class="section-text" style="margin: 0 auto;">
-      Help us keep Sierra Leoneans safe. Submit a flood report and our team will verify and broadcast the alert.
-    </p>
-  </div>
-  <div class="form-wrapper">
-    <div id="reportForm">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="firstName">First Name</label>
-          <input type="text" id="firstName" placeholder="Aminata"/>
-        </div>
-        <div class="form-group">
-          <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" placeholder="Koroma"/>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" placeholder="+232 XX XXX XXXX"/>
-      </div>
-      <div class="form-group">
-        <label for="district">Affected District</label>
-        <select id="district">
-          <option value="">— Select district —</option>
-          <option>Western Area (Freetown)</option>
-          <option>Bo District</option>
-          <option>Bombali District (Makeni)</option>
-          <option>Kenema District</option>
-          <option>Kailahun District</option>
-          <option>Port Loko District</option>
-          <option>Pujehun District</option>
-          <option>Tonkolili District</option>
-          <option>Kambia District</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="severity">Severity Level</label>
-        <select id="severity">
-          <option value="">— Select severity —</option>
-          <option>🟢 Minor — shallow water on roads</option>
-          <option>🟡 Moderate — homes affected, passable</option>
-          <option>🔴 Severe — homes flooded, evacuation needed</option>
-          <option>⚫ Extreme — lives at immediate risk</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="description">Describe the situation</label>
-        <textarea id="description" placeholder="Describe what you can see — water level, number of households affected, road conditions, injuries, etc."></textarea>
-      </div>
-      <button class="submit-btn" onclick="submitReport()">📡 Submit Flood Report</button>
-    </div>
-    <div class="form-success" id="formSuccess">
-      ✅ Report received! Our team has been notified and will verify your submission within 15 minutes. Stay safe.
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
-  <div style="text-align:center;">
-    <div class="section-label">Common Questions</div>
-    <h2 class="section-title">Frequently Asked Questions</h2>
-    <p class="section-text" style="margin: 0 auto;">
-      Find answers to common questions about SL FloodWatch and flood safety in Sierra Leone.
-    </p>
-  </div>
-  <div class="faq-container">
-    <details class="faq-item">
-      <summary>How often is the water level data updated?</summary>
-      <div class="faq-content">
-        Data is transmitted from our IoT sensors every 15 minutes to ensure real-time accuracy across all monitored zones.
-      </div>
-    </details>
-    <details class="faq-item">
-      <summary>How do I receive emergency alerts?</summary>
-      <div class="faq-content">
-        Currently, alerts are broadcast on this dashboard. We are actively working on an SMS notification system for users in high-risk zones.
-      </div>
-    </details>
-    <details class="faq-item">
-      <summary>Who validates the community reports?</summary>
-      <div class="faq-content">
-        Our moderation team and local community leaders verify reports before they are broadcast as official alerts.
-      </div>
-    </details>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div style="text-align:center;">
-    <div class="section-label">Get in Touch</div>
-    <h2 class="section-title">Contact Us</h2>
-    <p class="section-text" style="margin: 0 auto;">
-      Have questions or want to partner with us? Send us a message.
-    </p>
-  </div>
-  <div class="form-wrapper">
-    <div id="contactForm">
-      <div class="form-group">
-        <label for="contactName">Full Name</label>
-        <input type="text" id="contactName" placeholder="Your Name"/>
-      </div>
-      <div class="form-group">
-        <label for="contactEmail">Email Address</label>
-        <input type="email" id="contactEmail" placeholder="your.email@example.com"/>
-      </div>
-      <div class="form-group">
-        <label for="contactMessage">Message</label>
-        <textarea id="contactMessage" placeholder="How can we help?"></textarea>
-      </div>
-      <button class="submit-btn" onclick="submitContact()">📩 Send Message</button>
-    </div>
-    <div class="form-success" id="contactSuccess">
-      ✅ Message sent! We'll get back to you shortly.
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-label">About SL FloodWatch</div>
-  <h2 class="section-title">Built for Sierra Leone</h2>
-  <p class="section-text" style="margin: 0 auto; text-align:center;">
-    A Digital Public Good (DPG) initiative combining community reports, IoT sensor data,
-    and government partnerships to protect lives from flooding.
-  </p>
-  <div class="about-grid">
-    <div class="about-card">
-      <div class="about-icon">📡</div>
-      <h3>Real-time Sensors</h3>
-      <p>River level and rainfall sensors deployed across 14 districts feeding live data every 15 minutes.</p>
-    </div>
-    <div class="about-card">
-      <div class="about-icon">📲</div>
-      <h3>Community Reports</h3>
-      <p>Citizens submit on-the-ground reports via this website or SMS, verified and broadcast within minutes.</p>
-    </div>
-    <div class="about-card">
-      <div class="about-icon">🏛️</div>
-      <h3>Government Partnership</h3>
-      <p>Integrated with Sierra Leone's National Disaster Management Agency (NDMA) for coordinated response.</p>
-    </div>
-    <div class="about-card">
-      <div class="about-icon">🔓</div>
-      <h3>Open Source (DPG)</h3>
-      <p>Fully open-source under Digital Public Goods principles. Free to use, adapt, and improve by anyone.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 <strong>SL FloodWatch</strong> &nbsp;·&nbsp; A Digital Public Good for Sierra Leone &nbsp;·&nbsp; Built with HTML, CSS & JavaScript</p>
-  <p style="margin-top:0.5rem;">Limkokwing University · DCOMP204 Web Design 1 · Semester 04</p>
-</footer>
-
-<script>
-  // Rain animation
-  const rain = document.getElementById('rain');
-  for (let i = 0; i < 50; i++) {
-    const drop = document.createElement('div');
-    drop.className = 'raindrop';
-    const left = Math.random() * 100;
-    const dur = 0.6 + Math.random() * 1.2;
-    const delay = Math.random() * 3;
-    const h = 30 + Math.random() * 60;
-    drop.style.cssText = `left:${left}%;height:${h}px;animation-duration:${dur}s;animation-delay:${delay}s;opacity:${0.2 + Math.random()*0.4}`;
-    rain.appendChild(drop);
-  }
-
-  // Hamburger
-  document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('navLinks').classList.toggle('open');
-  });
-
-  // Close nav on link click
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
-  });
-
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      const el = document.querySelector(a.getAttribute('href'));
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Hamburger
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
     });
-  });
 
-  // Form submit
-  function submitReport() {
-    const district = document.getElementById('district').value;
-    const severity = document.getElementById('severity').value;
-    const desc = document.getElementById('description').value.trim();
-    const firstName = document.getElementById('firstName').value.trim();
+    // Close nav on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    });
 
-    if (!firstName || !district || !severity || !desc) {
-      alert('⚠️ Please fill in all required fields before submitting.');
-      return;
-    }
-    document.getElementById('reportForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-  }
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const el = document.querySelector(a.getAttribute('href'));
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
 
-  function submitContact() {
-    const name = document.getElementById('contactName').value.trim();
-    const email = document.getElementById('contactEmail').value.trim();
-    const msg = document.getElementById('contactMessage').value.trim();
+    // Form submit
+    function submitReport() {
+      const district = document.getElementById('district').value;
+      const severity = document.getElementById('severity').value;
+      const desc = document.getElementById('description').value.trim();
+      const firstName = document.getElementById('firstName').value.trim();
 
-    if (!name || !email || !msg) {
-      alert('⚠️ Please fill in all required fields.');
-      return;
-    }
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('contactSuccess').style.display = 'block';
-  }
-
-  // Animate water bars on scroll
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.querySelectorAll('.water-bar-fill').forEach(bar => {
-          const w = bar.style.width;
-          bar.style.width = '0';
-          setTimeout(() => { bar.style.width = w; }, 100);
-        });
+      if (!firstName || !district || !severity || !desc) {
+        alert('⚠️ Please fill in all required fields before submitting.');
+        return;
       }
-    });
-  }, { threshold: 0.2 });
-  document.querySelectorAll('.alert-card').forEach(c => observer.observe(c));
-
-  // Live alert counter tick
-  let alertCount = 3;
-  setInterval(() => {
-    const el = document.getElementById('activeAlerts');
-    const flicker = Math.random() > 0.7;
-    if (flicker) {
-      el.style.color = 'var(--amber)';
-      setTimeout(() => el.style.color = 'var(--cyan)', 400);
+      document.getElementById('reportForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
     }
-  }, 3000);
-</script>
+
+    function submitContact() {
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const msg = document.getElementById('contactMessage').value.trim();
+
+      if (!name || !email || !msg) {
+        alert('⚠️ Please fill in all required fields.');
+        return;
+      }
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('contactSuccess').style.display = 'block';
+    }
+
+    // Animate water bars on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.water-bar-fill').forEach(bar => {
+            const w = bar.style.width;
+            bar.style.width = '0';
+            setTimeout(() => { bar.style.width = w; }, 100);
+          });
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.alert-card').forEach(c => observer.observe(c));
+
+    // Live alert counter tick
+    let alertCount = 3;
+    setInterval(() => {
+      const el = document.getElementById('activeAlerts');
+      const flicker = Math.random() > 0.7;
+      if (flicker) {
+        el.style.color = 'var(--amber)';
+        setTimeout(() => el.style.color = 'var(--cyan)', 400);
+      }
+    }, 3000);
+  </script>
 </body>
+
 </html>
